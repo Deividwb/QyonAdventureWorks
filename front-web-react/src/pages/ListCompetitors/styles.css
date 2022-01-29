@@ -1,0 +1,17 @@
+.container-btn{
+    padding-left: 50px;
+}
+
+.container-table{
+    padding: 5px 60px;
+}
+
+.color-btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-btn-trash{
+    background-color: red;    
+}
+

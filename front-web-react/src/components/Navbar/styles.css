@@ -1,0 +1,43 @@
+.navbar{    
+    background-color: black;
+    padding-left: 2px;      
+}
+
+.navbar h4{
+    color: #ffff;
+}
+
+.navbar h4:hover{
+    color: yellow;
+}
+
+.options-nav{
+    color: #ffff;
+    font-size: 18px;
+    width: 400px;
+    padding-right: 20px;
+    justify-content: space-between;
+}
+
+.nav-one:hover{
+    color: red;    
+}
+
+.nav-two:hover{
+    color: rgb(4, 255, 0);    
+}
+
+.nav-three:hover{
+    color: rgb(223, 20, 162);    
+}
+
+.nav-logo{
+    padding-left: 50px;
+}
+
+
+.menu-nav{   
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+   }

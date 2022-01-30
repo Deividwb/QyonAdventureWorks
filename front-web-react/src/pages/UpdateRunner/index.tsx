@@ -1,9 +1,7 @@
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { FaTrash } from "react-icons/fa";
-import { GrUpdate } from "react-icons/gr";
 
-const UpdateCompetitor = () => {
+const UpdateRunner = () => {
   return (
     <div>
       <div>
@@ -37,16 +35,16 @@ const UpdateCompetitor = () => {
           <div className="btn-container">           
             <button
               
-              className="btn btn-segundary"
+              className="btn btn-secondary"
               type="button"
             >
-              Save
+              Salvar
             </button>
 
             <span className="btn-update">
             <Link
               to="/competidores"
-              className="btn btn-segundary "
+              className="btn btn-secondary "
               type="button"
             >
               Voltar
@@ -59,4 +57,4 @@ const UpdateCompetitor = () => {
   );
 };
 
-export default UpdateCompetitor;
+export default UpdateRunner;

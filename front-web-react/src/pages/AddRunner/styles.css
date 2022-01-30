@@ -1,0 +1,12 @@
+.btn-reset {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.input-weight {
+  padding-bottom: 15px;
+}
+
+.btn-cancel {
+  margin-left: 20px;
+}

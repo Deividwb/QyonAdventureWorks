@@ -2,17 +2,18 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import { GrUpdate } from "react-icons/gr";
+import {ReactComponent as RunImg} from 'assets/images/run.svg';
 
 const ListCompetitors = () => {
   return (
     <div>
       <div>
         <h2 className="text-center">Lista Competidores</h2>
-        <div className="container-btn">
-          <Link className="btn btn-segundary" to="#">
-            Adicionar Competidor
-          </Link>
-        </div>
+
+        <div className="btn-img">
+        <Link className="btn-img-link" to="/adicionar/competidor"><RunImg/></Link>         
+        <label><p>Adicionar Competidor</p></label>       
+      </div>
 
         <div className="row container-table">
           <table className="table table-striped table-bordered">

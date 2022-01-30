@@ -1,3 +1,15 @@
-.btn-img{    
+.btn-img{ 
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column; 
     background-color:gray;
+    }
+
+.btn-img-link{ 
+    padding-left: 30px;   
 }
+
+.btn-img p{
+    color: #fff;
+}
+

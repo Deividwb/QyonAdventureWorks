@@ -1,6 +1,6 @@
 import Navbar from 'components/Navbar';
 import AddRunner from 'pages/AddRunner';
-import AddHiking from 'pages/AddHiking';
+import AddRunWay from 'pages/AddRunWay';
 import Home from 'pages/Home';
 import ListCompetitors from 'pages/ListCompetitors';
 import ListHiking from 'pages/ListHiking';
@@ -33,7 +33,7 @@ const Routes = () => {
         </Route>
 
         <Route path="/adicionar/pista">
-          <AddHiking />
+          <AddRunWay />
         </Route>
       </Switch>
     </BrowserRouter>

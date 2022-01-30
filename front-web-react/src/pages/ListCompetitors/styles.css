@@ -15,3 +15,11 @@
     background-color: red;    
 }
 
+.color-btn-update{
+    background-color: green;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    border: solid 2px;    
+}
+

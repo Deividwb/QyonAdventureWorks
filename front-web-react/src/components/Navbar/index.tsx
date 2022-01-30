@@ -1,6 +1,6 @@
 import "./styles.css";
 import "bootstrap/js/src/collapse.js";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 
@@ -9,11 +9,11 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar -expand-md"> 
     <div className="container-fluid">    
-        <a href="https://www.qyon.com/" target="_blank">
+        <Link to="/">
           <h4>
             QyonAdventure<div className="nav-logo">Works</div>
           </h4>
-        </a>
+        </Link>
 
         <div className="options-nav">
         <ul className="menu-nav">            

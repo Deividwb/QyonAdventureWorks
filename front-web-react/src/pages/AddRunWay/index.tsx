@@ -2,7 +2,7 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 
 
-const AddHiking = () => {
+const AddRunWay = () => {
   return (
     <div>
     <div className="container">
@@ -53,4 +53,4 @@ const AddHiking = () => {
   );
 };
 
-export default AddHiking;
+export default AddRunWay;

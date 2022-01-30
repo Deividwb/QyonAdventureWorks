@@ -1,0 +1,23 @@
+.hiking-card{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+.card-top-container{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 2px;
+   
+   
+}
+
+.card-top-container img{
+    width: 200px;
+    height: 100px;
+    padding-left: 10px;
+    border-bottom: 2px solid #e1e1e1;
+   
+}
+
+.card-description{
+    text-align: center;
+}

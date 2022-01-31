@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import { GrUpdate } from "react-icons/gr";
 import {ReactComponent as RunImg} from 'assets/images/run.svg';
+import { Runner } from "types/runner";
 
-const ListCompetitors = () => {
+export type Props = {
+  runner: Runner;
+}
+
+const ListCompetitors = ({runner}: Props) => {
+
   return (
     <div>
       <div>
@@ -30,12 +36,12 @@ const ListCompetitors = () => {
 
             <tbody>
               {                            
-                <tr key="id">
-                  <td>deivid</td>
-                  <td>Masculino</td>
-                  <td>25º</td>
-                  <td>81 Kg</td>
-                  <td>1.70m</td>
+                <tr key={runner.id}>
+                  <td>{runner.name}</td>
+                  <td>{runner.sexo}</td>
+                  <td>{runner.bodyTemperature + "º"}</td>
+                  <td>{runner.weight+"Kg"}</td>
+                  <td>{runner.height}</td>
 
                   <td>
                     <div className="color-btns">

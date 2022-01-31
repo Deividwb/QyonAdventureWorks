@@ -6,8 +6,23 @@ import ListCompetitors from 'pages/ListCompetitors';
 import ListHiking from 'pages/ListHiking';
 import UpdateCompetitor from 'pages/UpdateRunner';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Runner } from 'types/runner';
+
 
 const Routes = () => {
+
+const runner: Runner = {
+  
+    "id": 1,
+    "name": "DeividW",
+    "sexo": "Masculino",
+    "bodyTemperature": 35,
+    "weight": 81,
+    "height": 1.71
+ 
+}
+
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -17,7 +32,7 @@ const Routes = () => {
         </Route>
 
         <Route path="/competidores">
-          <ListCompetitors />
+          <ListCompetitors runner={runner}/>
         </Route>
 
         <Route path="/pistas">
@@ -29,7 +44,7 @@ const Routes = () => {
         </Route>
 
         <Route path="/adicionar/Competidor">
-          <AddRunner />
+        <AddRunner />
         </Route>
 
         <Route path="/adicionar/pista">

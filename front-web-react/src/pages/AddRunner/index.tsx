@@ -1,5 +1,6 @@
-import "./styles.css";
-import { Link } from "react-router-dom";
+import './styles.css';
+import { Link } from 'react-router-dom';
+
 
 const AddRunner = () => {
   return (
@@ -11,15 +12,14 @@ const AddRunner = () => {
 
             <div className="card-body">
               <form action="/competidores">
-
                 <div className="btn-reset">
-                <input
-                  className="btn-secondary"
-                  type="reset"
-                  value="Limpar Campos"
-                />
+                  <input
+                    className="btn-secondary"
+                    type="reset"
+                    value="Limpar Campos"
+                  />
                 </div>
-                
+
                 <div>
                   <label htmlFor="ctrl-name">Nome</label>
                   <input
@@ -40,9 +40,11 @@ const AddRunner = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="ctrl-temperature">Temperatura Media do Corpo:</label>
+                  <label htmlFor="ctrl-bodytemperature">
+                    Temperatura Media do Corpo:
+                  </label>
                   <input
-                    id="ctrl-temperature"
+                    id="ctrl-bodytemperature"
                     placeholder="Digite a Temperatura"
                     name="temperature"
                     className="form-control"
@@ -69,14 +71,16 @@ const AddRunner = () => {
                   />
                 </div>
 
-                
                 <Link className="btn btn-secondary" to="/competidores">
                   Salvar
                 </Link>
-                
-                <Link className="btn btn-secondary btn-cancel" to="/competidores">    
-                   Cancelar
-                </Link>                
+
+                <Link
+                  className="btn btn-secondary btn-cancel"
+                  to="/competidores"
+                >
+                  Cancelar
+                </Link>
               </form>
             </div>
           </div>

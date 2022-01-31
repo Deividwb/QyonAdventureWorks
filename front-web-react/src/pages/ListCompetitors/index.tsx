@@ -1,5 +1,8 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
+
+import { ReactComponent as UpdateImg } from 'assets/images/update.svg';
+import { ReactComponent as TrashImg } from 'assets/images/trash.svg';
 import { FaTrash } from 'react-icons/fa';
 import { GrUpdate } from 'react-icons/gr';
 import { ReactComponent as RunImg } from 'assets/images/run.svg';
@@ -47,17 +50,9 @@ const ListCompetitors = ({ runner }: Props) => {
                   <td>{runner.height}</td>
 
                   <td>
-                    <div className="color-btns">
-                      <button className="color-btn-trash" type="button">
-                        <FaTrash />
-                      </button>
-                      <Link
-                        to={`/atualizar/${runner.id}`}
-                        className="color-btn-update"
-                        type="button"
-                      >
-                        <GrUpdate />
-                      </Link>
+                    <div className="container-btns">
+                      <Link className='upbutton' to={`/atualizar/${runner.id}`}> <UpdateImg/> </Link>
+                      <button  className='btn'> <TrashImg /> </button>
                     </div>
                   </td>
                 </tr>

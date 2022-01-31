@@ -6,17 +6,16 @@
     padding: 5px 60px;
 }
 
-.color-btns{
+.container-btns{
     display: flex;
     justify-content: space-between;
 }
 
-.color-btn-trash{
-    background-color: red;    
+.upbutton{
+    padding-top: 8px;
 }
 
-.color-btn-update{
-    background-color: green;
+.color-btn-update{   
     padding: 0 8px;
     display: flex;
     align-items: center;

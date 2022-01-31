@@ -4,6 +4,7 @@ import AddRunWay from 'pages/AddRunWay';
 import Home from 'pages/Home';
 import ListCompetitors from 'pages/ListCompetitors';
 import ListRunWay from 'pages/ListRunWay';
+import RunWayDetails from 'pages/RunWayDetails';
 import UpdateCompetitor from 'pages/UpdateRunner';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Runner } from 'types/runner';
@@ -21,8 +22,6 @@ const runner: Runner = {
     "height": 1.72
   }
 
- 
-
 
   return (
     <BrowserRouter>
@@ -36,8 +35,12 @@ const runner: Runner = {
           <ListCompetitors runner={runner}/>
         </Route>
 
-        <Route path="/pistas">
+        <Route path="/pistas" exact>
           <ListRunWay />
+        </Route>
+
+        <Route path="/pistas/:id">
+          <RunWayDetails />
         </Route>
 
         <Route path="/atualizar/:id">

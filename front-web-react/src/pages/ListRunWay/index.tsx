@@ -6,7 +6,7 @@ import { RunWay } from 'types/runway';
 import  ItamaratyImg from 'assets/images/itamaraty.png';
 
 const ListRunWay = () => {
-  
+
   const runway: RunWay = {
     id: 1,
     image: ItamaratyImg,
@@ -14,8 +14,9 @@ const ListRunWay = () => {
       'O Parque do Araçariguama, um espaço aberto localizado no Jardim Itamaraty, é apenas um dos parques públicos de Santa Bárbara d’Oeste, cidade que se sobressai dentre as vizinhas da RPT (Região do Polo Têxtil) devido à quantidade e a diversidade de áreas verdes espalhadas pela sua extensão.',
   }
 
+
   return (
-    <div>
+    <div>     
       <h2 className="text-center">Pistas de Corrida</h2>
       <div className="btn-img">
         <Link className="btn-img-link" to="/adicionar/pista">

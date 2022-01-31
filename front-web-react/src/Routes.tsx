@@ -3,7 +3,7 @@ import AddRunner from 'pages/AddRunner';
 import AddRunWay from 'pages/AddRunWay';
 import Home from 'pages/Home';
 import ListCompetitors from 'pages/ListCompetitors';
-import ListHiking from 'pages/ListHiking';
+import ListRunWay from 'pages/ListRunWay';
 import UpdateCompetitor from 'pages/UpdateRunner';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Runner } from 'types/runner';
@@ -18,9 +18,10 @@ const runner: Runner = {
     "sexo": "Masculino",
     "bodyTemperature": 35,
     "weight": 81,
-    "height": 1.71
+    "height": 1.72
+  }
+
  
-}
 
 
   return (
@@ -36,10 +37,10 @@ const runner: Runner = {
         </Route>
 
         <Route path="/pistas">
-          <ListHiking />
+          <ListRunWay />
         </Route>
 
-        <Route path="/atualizar">
+        <Route path="/atualizar/:id">
           <UpdateCompetitor />
         </Route>
 

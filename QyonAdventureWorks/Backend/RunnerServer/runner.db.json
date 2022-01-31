@@ -1,0 +1,44 @@
+{
+  "runnners": [
+    {
+      "id": 1,
+      "name": "DeividW",
+      "sexo": "Masculino",
+      "bodyTemperature": 35,
+      "weight": 81,
+      "height": 1.71
+    },
+    {
+      "id": 2,
+      "name": "Camila",
+      "sexo": "Feminino",
+      "bodyTemperature": 37,
+      "weight": 81,
+      "height": 1.65
+    },
+    {
+      "id": 3,
+      "name": "DaviW",
+      "sexo": "Masculino",
+      "bodyTemperature": 36,
+      "weight": 81,
+      "height": 1.05
+    },
+    {
+      "name": "Jandyra",
+      "sexo": "Feminino",
+      "bodyTemperature": 26,
+      "weight": 71,
+      "height": 1.68,
+      "id": 4
+    },
+    {
+      "name": "Jandy",
+      "sexo": "Feminino",
+      "bodyTemperature": 26,
+      "weight": 71,
+      "height": 1.68,
+      "id": 5
+    }
+  ]
+}

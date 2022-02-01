@@ -1,43 +1,51 @@
-.navbar{    
-    background-color: black;
-    padding-left: 2px;      
+.navbar {
+  background-color: black;
+  padding-left: 2px;
 }
 
-.navbar h4{
-    color: #ffff;
+.navbar h4 {
+  color: #ffff;
 }
 
-.navbar h4:hover{
-    color: yellow;
+.navbar h4:hover {
+  color: yellow;
 }
 
-.options-nav{
-    color: #ffff;
-    font-size: 18px;
-    width: 400px;
-    padding-right: 20px;
-    justify-content: space-between;
+.options-nav {
+  color: #ffff;
+  font-size: 18px;
+  width: 500px; 
+  padding-bottom: 25px;
+  display: flex; 
+  justify-content: center;
 }
 
-.nav-one:hover{
-    color: red;    
+.options-nav ul li {  
+  width: 170px;  
 }
 
-.nav-two:hover{
-    color: rgb(4, 255, 0);    
+.nav-one:hover {
+  color: red;
 }
 
-.nav-three:hover{
-    color: rgb(223, 20, 162);    
+.nav-two:hover {
+  color: rgb(4, 255, 0);
 }
 
-.nav-logo{
-    padding-left: 50px;
+.nav-three:hover {
+  color: rgb(223, 20, 162);
 }
 
+.nav-logo {
+  padding-left: 50px;
+}
 
-.menu-nav{   
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-   }
+.menu-nav {
+  display: flex; 
+  list-style-type: none;
+  position: absolute;   
+}
+
+.nav-text{   
+    
+}

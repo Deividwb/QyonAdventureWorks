@@ -1,5 +1,6 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
+import Options from 'pages/Options';
 
 
 const AddRunner = () => {
@@ -80,12 +81,12 @@ const AddRunner = () => {
                   to="/competidores"
                 >
                   Cancelar
-                </Link>
+                </Link>             
               </form>
             </div>
           </div>
         </div>
-      </div>
+      </div>      
     </div>
   );
 };

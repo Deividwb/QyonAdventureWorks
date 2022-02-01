@@ -1,0 +1,21 @@
+.options-nav-container ul {
+  background-color: rgba(209, 215, 221, 0.925);
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  list-style-type: none;
+  position: relative;
+  border-radius: 10px;
+  padding: 1px;
+  font-size: 14px;
+  padding-top: 10px;
+  display: none;
+}
+
+.options-nav-container ul li:hover {
+  background-color: gray;
+}
+
+.options-nav-container:hover ul {
+ display: block;
+}

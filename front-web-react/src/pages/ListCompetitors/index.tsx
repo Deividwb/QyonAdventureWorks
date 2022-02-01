@@ -1,10 +1,7 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
-
 import { ReactComponent as UpdateImg } from 'assets/images/update.svg';
 import { ReactComponent as TrashImg } from 'assets/images/trash.svg';
-import { FaTrash } from 'react-icons/fa';
-import { GrUpdate } from 'react-icons/gr';
 import { ReactComponent as RunImg } from 'assets/images/run.svg';
 import { Runner } from 'types/runner';
 

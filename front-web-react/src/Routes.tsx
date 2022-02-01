@@ -4,6 +4,7 @@ import AddRunWay from 'pages/AddRunWay';
 import Home from 'pages/Home';
 import ListCompetitors from 'pages/ListCompetitors';
 import ListRunWay from 'pages/ListRunWay';
+import Options from 'pages/Options';
 import RunWayDetails from 'pages/RunWayDetails';
 import UpdateCompetitor from 'pages/UpdateRunner';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -53,6 +54,10 @@ const runner: Runner = {
 
         <Route path="/adicionar/pista">
           <AddRunWay />
+        </Route>
+
+        <Route path="/opcoes">
+          <Options />
         </Route>
       </Switch>
     </BrowserRouter>

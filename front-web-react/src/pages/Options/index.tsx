@@ -8,19 +8,19 @@ const Options = () => {
             <p>Opções</p>
             <ul>
               <li>
-                  <Link to="#"><p>Histórico de corridas</p></Link>          
+                  <Link to="/pistas"><p>Histórico de corridas</p></Link>          
               </li>
       
               <li>
-              <Link to="#" ><p>Pistas Utilizadas</p></Link>
+              <Link to="/adicionar/Competidor" ><p>Pistas Utilizadas</p></Link>
               </li>
       
               <li>
-              <Link to="#"><p>Tempo Médio corridas</p></Link>
+              <Link to="/"><p>Tempo Médio corridas</p></Link>
               </li>
       
               <li>
-              <Link to="#"><p>Competidores sem corridas</p></Link>
+              <Link to="/competidor"><p>Competidores sem corridas</p></Link>
               </li>
             </ul>
           </nav>

@@ -1,7 +1,7 @@
 import './styles.css';
 import 'bootstrap/js/src/collapse.js';
 import { Link, NavLink } from 'react-router-dom';
-import Options from 'pages/Options';
+import Options from 'components/Options';
 
 const Navbar = () => {
   return (

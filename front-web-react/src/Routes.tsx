@@ -2,27 +2,25 @@ import Navbar from 'components/Navbar';
 import AddRunner from 'pages/AddRunner';
 import AddRunWay from 'pages/AddRunWay';
 import Home from 'pages/Home';
-import ListCompetitors from 'pages/ListCompetitors';
+import ListRunners from 'pages/ListRunners';
 import ListRunWay from 'pages/ListRunWay';
-import Options from 'pages/Options';
 import RunWayDetails from 'pages/RunWayDetails';
-import UpdateCompetitor from 'pages/UpdateRunner';
+import UpdateRunner from 'pages/UpdateRunner';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Runner } from 'types/runner';
-
+import RunWaysStorage from 'pages/RunWaysStorage';
+import ListUsedTime from 'pages/ListUsedTime';
+import ListNotRun from 'pages/ListNotRun';
 
 const Routes = () => {
-
-const runner: Runner = {
-  
-    "id": 1,
-    "name": "DeividW",
-    "sexo": "Masculino",
-    "bodyTemperature": 35,
-    "weight": 81,
-    "height": 1.72
-  }
-
+  const runner: Runner = {
+    id: 1,
+    name: 'DeividW',
+    sexo: 'Masculino',
+    bodyTemperature: 35,
+    weight: 81,
+    height: 1.72,
+  };
 
   return (
     <BrowserRouter>
@@ -33,7 +31,7 @@ const runner: Runner = {
         </Route>
 
         <Route path="/competidores">
-          <ListCompetitors runner={runner}/>
+          <ListRunners runner={runner} />
         </Route>
 
         <Route path="/pistas" exact>
@@ -45,19 +43,35 @@ const runner: Runner = {
         </Route>
 
         <Route path="/atualizar/:id">
-          <UpdateCompetitor />
+          <UpdateRunner />
         </Route>
 
         <Route path="/adicionar/Competidor">
-        <AddRunner />
+          <AddRunner />
         </Route>
 
         <Route path="/adicionar/pista">
           <AddRunWay />
         </Route>
 
-        <Route path="/opcoes">
-          <Options />
+        <Route path="/opcoes  <RunWaysStorage  />" exact>
+         
+        </Route>
+
+        <Route path="/opcoes/historicocorrida <RunWaysStorage />">         
+          
+        </Route>
+
+        <Route path="/opcoes/listapistas">
+          <RunWayDetails />
+        </Route>
+
+        <Route path="/opcoes/tempomedio">
+          <ListUsedTime />
+        </Route>
+
+        <Route path="/opcoes/corredorsemcorrida">
+          <ListNotRun />
         </Route>
       </Switch>
     </BrowserRouter>

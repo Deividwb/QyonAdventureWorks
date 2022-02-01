@@ -9,7 +9,7 @@ type Props = {
   runner: Runner;
 }
 
-const ListCompetitors = ({ runner }: Props) => {
+const ListRunners = ({ runner }: Props) => {
   return (
     <div>
       <div>
@@ -62,4 +62,4 @@ const ListCompetitors = ({ runner }: Props) => {
   );
 };
 
-export default ListCompetitors;
+export default ListRunners;

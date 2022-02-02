@@ -1,7 +1,24 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
+//import { Runner } from 'types/runner';
+//import axios from 'axios';
+//import { BASE_URL } from 'util/request';
+
+
 
 const AddRunner = () => {
+
+  //FORMA INCORRETA
+  //let runner: Runner;
+
+  //FORMA INCORRETA
+  //axios.get(BASE_URL + "/runners/2")
+  //.then(response => {
+    //console.log(response.data)
+ // });
+
+
+
   return (
     <div>
       <div className="container">

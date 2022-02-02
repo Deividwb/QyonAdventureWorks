@@ -30,27 +30,27 @@ const RunWayDetails = () => {
         <div className="container my-4">
           <div className="row">
             <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay runway={runway} />
+              <CardRunWay  />
             </div>
   
             <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay runway={runway} />
+              <CardRunWay  />
             </div>
   
             <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay runway={runway} />
+              <CardRunWay  />
             </div>
   
             <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay runway={runway} />
+              <CardRunWay  />
             </div>
   
             <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay runway={runway} />
+              <CardRunWay  />
             </div>
   
             <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay runway={runway} />
+              <CardRunWay  />
             </div>
           </div>
         </div>

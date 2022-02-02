@@ -3,13 +3,24 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as UpdateImg } from 'assets/images/update.svg';
 import { ReactComponent as TrashImg } from 'assets/images/trash.svg';
 import { ReactComponent as RunImg } from 'assets/images/run.svg';
+import api from 'Services/api';
+import { useEffect, useState } from 'react';
 import { Runner } from 'types/runner';
 
-type Props = {
-  runner: Runner;
-}
 
-const ListRunners = ({ runner }: Props) => {
+const ListRunners = () => {
+  const [runner, setRunner] = useState<Runner[]>([]);
+
+  useEffect(() => {
+    loadRunners();
+  }, []);
+
+  async function loadRunners() {
+    const response = await api.get('/runners');
+    console.log(response.data);
+    setRunner(response.data)
+  }
+
   return (
     <div>
       <div>
@@ -39,27 +50,40 @@ const ListRunners = ({ runner }: Props) => {
 
             <tbody>
               {
-                <tr key={runner.id}>
-                  <td>{runner.name}</td>
-                  <td>{runner.sexo}</td>
-                  <td>{runner.bodyTemperature + 'º'}</td>
-                  <td>{runner.weight + 'Kg'}</td>
-                  <td>{runner.height}</td>
+               runner.map(runners => (                
+                <tr key={runners.id}>
+
+                  <td>{runners.name}</td>
+                  <td>{runners.sexo}</td>
+                  <td>{runners.bodyTemperature + 'º'}</td>
+                  <td>{runners.weight + 'Kg'}</td>
+                  <td>{runners.height}</td>
 
                   <td>
                     <div className="container-btns">
-                      <Link className='upbutton' to={`/competidor/atualizar/${runner.id}`}> <UpdateImg/> </Link>
-                      <button  className='btn'> <TrashImg /> </button>
+                      <Link
+                        className="upbutton"
+                        to={`/competidor/atualizar/${runners.id}`}
+                      >
+                        {' '}
+                        <UpdateImg />{' '}
+                      </Link>
+                      <button className="btn">
+                        {' '}
+                        <TrashImg />{' '}
+                      </button>
                     </div>
                   </td>
                 </tr>
-              }
+              ))}
+
+
             </tbody>
           </table>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default ListRunners;

@@ -43,7 +43,7 @@ const Routes = () => {
         </Route>
 
         <Route path="/competidores">
-          <ListRunners runner={runner} />
+          <ListRunners />
         </Route>
 
         <Route path="/competidor/adicionar" exact>
@@ -54,11 +54,11 @@ const Routes = () => {
           <UpdateRunner />
         </Route> 
 
-        <Route path="/pistas" exact>
+        <Route path="/pistas" >
           <ListRunWay />
         </Route>   
 
-        <Route path="/pista" exact>
+        <Route path="/pista/:runwayId" exact>
           <RunWayDetails />
         </Route>    
 

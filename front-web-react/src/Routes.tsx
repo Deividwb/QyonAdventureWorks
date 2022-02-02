@@ -1,6 +1,5 @@
 import Navbar from 'components/Navbar';
 import AddRunner from 'pages/AddRunner';
-import AddRunWay from 'pages/AddRunWay';
 import Home from 'pages/Home';
 import ListRunners from 'pages/ListRunners';
 import ListRunWay from 'pages/ListRunWay';
@@ -15,6 +14,7 @@ import RunWaysStorage from 'pages/RunWaysStorage';
 import AddRunWaysStorage from 'pages/AddRunWaysStorage';
 import UpdateRunWaysStorage from 'pages/UpdateRunWaysStorage';
 import UpdateRunWay from 'pages/UpdateRunWay';
+import AddRunWay from 'pages/AddRunWay';
 
 const Routes = () => {
   const runner: Runner = {
@@ -50,19 +50,19 @@ const Routes = () => {
           <AddRunner />
         </Route>
 
-         <Route path="/competidor/atualizar/:id">
+         <Route path="/competidor/atualizar/:id" >
           <UpdateRunner />
         </Route> 
 
-        <Route path="/pistas">
+        <Route path="/pistas" exact>
           <ListRunWay />
         </Route>   
 
-        <Route path="/pista/:id">
+        <Route path="/pista" exact>
           <RunWayDetails />
         </Route>    
 
-        <Route path="/pista/adicionar">
+        <Route path="/pista/adicionar" >
           <AddRunWay />
         </Route>  
 

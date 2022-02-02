@@ -45,12 +45,12 @@
   "runways": [
     {
       "id": 1,
-      "image": "assets/images/itamaraty.png",
+      "image": "https://rciararaquara.com.br/wp-content/uploads/2020/08/Pista-emborrachada.jpg",
       "description": "O Parque do Araçariguama, um espaço aberto localizado no Jardim Itamaraty, é apenas um dos parques públicos de Santa Bárbara d’Oeste, cidade que se sobressai dentre as vizinhas da RPT (Região do Polo Têxtil) devido à quantidade e a diversidade de áreas verdes espalhadas pela sua extensão."
     },
     {
       "id": 2,
-      "image": "assets/images/engordadouro.png",
+      "image": "https://jundiai.sp.gov.br/noticias/wp-content/uploads/sites/32/2019/02/parque-do-engordadouro_c_-2-768x512.jpg",
       "description": "A área do lazer do Engordadouro está adaptada, inclusive, com bebedouros “pets”, para receber os bichinhos de estimação com coleira por meio do projeto-piloto “Vamos Juntos ao Parque”. Lagos, praias, mirantes, quiosques de sapê, academia ao ar livre, parque infantil, paraciclos, quadras poliesportiva e de areia, além de piso tátil para a acessibilidade de deficientes visuais formam o complexo “Ângelo Costa”."
     },
     {

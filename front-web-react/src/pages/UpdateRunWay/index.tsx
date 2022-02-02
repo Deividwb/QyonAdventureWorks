@@ -1,15 +1,23 @@
-import "./styles.css";
-import { Link } from "react-router-dom";
+import './styles.css';import { Link } from 'react-router-dom';
+import { RunWay } from 'types/runway';
+import  ItamaratyImg from 'assets/images/itamaraty.png';
 
+const UpdateRunWay = () => {
 
-const AddRunWay = () => {
+  const updaterunway: RunWay = {
+    id: 1,
+    image: ItamaratyImg,
+    description:
+      'O Parque do Araçariguama, um espaço aberto localizado no Jardim Itamaraty, é apenas um dos parques públicos de Santa Bárbara d’Oeste, cidade que se sobressai dentre as vizinhas da RPT (Região do Polo Têxtil) devido à quantidade e a diversidade de áreas verdes espalhadas pela sua extensão.',
+  }
+
 
   return (
     <div>
     <div className="container">
       <div className="row">
         <div className="card col-md-6 offset-md-3 offset-md-3">
-          <h3 className="text-center">Adicionar Pista</h3>
+          <h3 className="text-center">Atualizar Pista</h3>
 
           <div className="card-body">
             <form action="/competidores">
@@ -54,4 +62,5 @@ const AddRunWay = () => {
   );
 }
 
-export default AddRunWay;
+
+export default UpdateRunWay;

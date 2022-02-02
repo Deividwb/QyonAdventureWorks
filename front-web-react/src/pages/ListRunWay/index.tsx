@@ -19,7 +19,7 @@ const ListRunWay = () => {
     <div>     
       <h2 className="text-center">Pistas de Corrida</h2>
       <div className="btn-img">
-        <Link className="btn-img-link" to="/adicionar/pista">
+        <Link className="btn-img-link" to="/pista/adicionar">
           <RunImg />
         </Link>
         <label>

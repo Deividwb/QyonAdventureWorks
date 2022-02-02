@@ -16,7 +16,7 @@ const ListRunners = ({ runner }: Props) => {
         <h2 className="text-center">Lista Competidores</h2>
 
         <div className="btn-img">
-          <Link className="btn-img-link" to="/adicionar/competidor">
+          <Link className="btn-img-link" to="/competidor/adicionar">
             <RunImg />
           </Link>
           <label>
@@ -48,7 +48,7 @@ const ListRunners = ({ runner }: Props) => {
 
                   <td>
                     <div className="container-btns">
-                      <Link className='upbutton' to={`/atualizar/${runner.id}`}> <UpdateImg/> </Link>
+                      <Link className='upbutton' to={`/competidor/atualizar/${runner.id}`}> <UpdateImg/> </Link>
                       <button  className='btn'> <TrashImg /> </button>
                     </div>
                   </td>
@@ -60,6 +60,6 @@ const ListRunners = ({ runner }: Props) => {
       </div>
     </div>
   );
-};
+}
 
 export default ListRunners;

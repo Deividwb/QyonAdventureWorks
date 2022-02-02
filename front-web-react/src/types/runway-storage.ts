@@ -1,10 +1,9 @@
-import { Runner } from "./runner";
-import { RunWay } from "./runway";
+
 
 export type RunWayStorage = {
     id:number;
-    runners:Runner[];
-    runways:RunWay[];
+    runner:number;
+    runway:number;
     dateRunWay:string;
     usedTime:number;
-}
+};

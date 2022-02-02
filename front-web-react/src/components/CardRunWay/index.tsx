@@ -25,9 +25,9 @@ const CardRunWay = ({ runway }: Props) => {
             <p>{runway.description}</p>
           </div>          
               <div className='card-button'>
-              <Link to={`/pistas/${runway.id}`} className='btn btn-secondary delete-btn'>Detalhes</Link>
+              <Link to={`/pista/${runway.id}`} className='btn btn-secondary delete-btn'>Detalhes</Link>
              
-              <button  className='btn update-btn'><UpdateImg/></button>  
+              <Link to={`/pista/atualizar/:id${runway.id}`}  className='btn update-btn'><UpdateImg/></Link>  
               <button  className='btn trash-btn'><TrashImg/></button>            
           </div>
         </div>

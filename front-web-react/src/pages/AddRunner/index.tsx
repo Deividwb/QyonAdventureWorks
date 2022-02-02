@@ -1,7 +1,5 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
-import Options from 'components/Options';
-
 
 const AddRunner = () => {
   return (
@@ -9,7 +7,7 @@ const AddRunner = () => {
       <div className="container">
         <div className="row">
           <div className="card col-md-6 offset-md-3 offset-md-3">
-            <h3 className="text-center">Adicionar Corredor</h3>
+            <h3 className="text-center">Adicionar Competidor</h3>
 
             <div className="card-body">
               <form action="/competidores">

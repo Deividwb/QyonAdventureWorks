@@ -33,28 +33,12 @@
       "id": 4
     },
     {
-      "name": "Jandy",
-      "sexo": "Feminino",
-      "bodyTemperature": 26,
-      "weight": 71,
-      "height": 1.68,
-      "id": 5
-    },
-    {
       "name": "Roberto",
       "sexo": "Feminino",
       "bodyTemperature": 27,
       "weight": 78,
       "height": 1.5,
       "id": 6
-    },
-    {
-      "name": "fernanda",
-      "sexo": "m",
-      "bodyTemperature": "25",
-      "weight": "46",
-      "height": "1.60",
-      "id": 8
     }
   ],
   "runways": [

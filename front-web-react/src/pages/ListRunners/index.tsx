@@ -1,16 +1,15 @@
 import './styles.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ReactComponent as UpdateImg } from 'assets/images/update.svg';
 import { ReactComponent as TrashImg } from 'assets/images/trash.svg';
 import { ReactComponent as RunImg } from 'assets/images/run.svg';
+import { ReactComponent as ViewImg } from 'assets/images/view.svg';
 import api from 'Services/api';
 import { useEffect, useState } from 'react';
 import { Runner } from 'types/runner';
 
 
-const ListRunners = () => {
-
-  const { id } = useParams<{ id: string }>();
+const ListRunners = () => { 
   
 
   const [runner, setRunner] = useState<Runner[]>([]);
@@ -19,16 +18,11 @@ const ListRunners = () => {
     loadRunners();
   }, []);
 
-  useEffect(() => { 
-
-  
-
-  },[id])
-
+ 
   async function loadRunners() {
 
     const response = await api.get('/runners');
-    console.log(response.data);
+    //console.log(response.data);
     setRunner(response.data)
   }
 
@@ -80,16 +74,20 @@ const ListRunners = () => {
                   <td>{runners.height}</td>
 
                   <td>
-                    <div className="container-btns">
+                    <div className="btn-container">
                       <Link
                         className="upbutton"
                         to={`/competidor/adicionar/${runners.id}`}
-                      >
-                        {' '}
-                        <UpdateImg />{' '}
+                      >                        
+                        <UpdateImg />
                       </Link>
 
-                      <button onClick={() => deleteRunners(runners.id)} className="btn">                       
+                      <Link to={`/competidor/${runners.id}`}>
+                                     
+                        <ViewImg />
+                      </Link>
+
+                      <button  onClick={() => deleteRunners(runners.id)} className="btn">                       
                         <TrashImg />
                       </button>
                     </div>

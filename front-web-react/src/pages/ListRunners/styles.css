@@ -6,14 +6,13 @@
     padding: 5px 60px;
 }
 
-.container-btns{
+.btn-container{
     display: flex;
     justify-content: space-between;
+    align-items: center;    
 }
 
-.upbutton{
-    padding-top: 8px;
-}
+
 
 .color-btn-update{   
     padding: 0 8px;

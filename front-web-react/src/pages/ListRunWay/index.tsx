@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react';
 import api from 'Services/api';
 
 const ListRunWay = () => {
-  const [runway, setRunway] = useState<RunWay[]>([]);
+
+  const [listRunway, setListRunway] = useState<RunWay[]>([]);
 
   useEffect(() => {
     loadRunways();
@@ -17,12 +18,12 @@ const ListRunWay = () => {
   async function loadRunways() {
     const response = await api.get('/runways');
     console.log(response.data);
-    setRunway(response.data);
+    setListRunway(response.data);
   }
 
   return (
     <div>
-      <h2 className="text-center">Pistas de Corrida</h2>
+      <h2 className="text-center">Lista Pistas de Corrida</h2>
       <div className="btn-img">
         <Link className="btn-img-link" to="/pista/adicionar">
           <RunImg />
@@ -35,8 +36,8 @@ const ListRunWay = () => {
       <div className="container my-4" >
         <div className="row">
           <div className="col-sm-6 col-lg-4 col-xl-3">
-            {runway.map((runways) => (
-              <CardRunWay key={runways.id}/>
+            {listRunway.map((listRunways) => (
+              <CardRunWay key={listRunways.id}/>
             ))}
           </div>
         </div>

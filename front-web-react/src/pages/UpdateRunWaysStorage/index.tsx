@@ -1,16 +1,15 @@
+import  './styles.css';
+
 import { Link } from 'react-router-dom';
 import { ReactComponent as RunImg } from 'assets/images/run.svg';
 import { ReactComponent as SaveImg } from 'assets/images/save.svg';
-import { RunWayStorage } from 'types/runway-storage';
-import  './styles.css';
 
 
 
-type Props = {
-  runWaysStorage: RunWayStorage;
-};
 
-const UpdateRunWaysStorage = ({ runWaysStorage }: Props) => {
+
+
+const UpdateRunWaysStorage = () => {
   return (
     <div>
       <div>
@@ -38,11 +37,11 @@ const UpdateRunWaysStorage = ({ runWaysStorage }: Props) => {
 
             <tbody>
               {
-                <tr key={runWaysStorage.id}>
-                  <td>{runWaysStorage.runner}</td>
-                  <td>{runWaysStorage.runway}</td>
-                  <td>{runWaysStorage.dateRunWay}</td>               
-                  <td>{runWaysStorage.usedTime}</td>               
+                <tr key={"runWaysStorage.id"}>
+                  <td>{"runWaysStorage.runner"}</td>
+                  <td>{"runWaysStorage.runway"}</td>
+                  <td>{"runWaysStorage.dateRunWay"}</td>               
+                  <td>{"runWaysStorage.usedTime"}</td>               
 
                   <td>
                     <div className="container-btns">

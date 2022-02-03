@@ -4,7 +4,6 @@ import Home from 'pages/Home';
 import ListRunners from 'pages/ListRunners';
 import ListRunWay from 'pages/ListRunWay';
 import RunWayDetails from 'pages/RunWayDetails';
-//import UpdateRunner from 'pages/UpdateRunner';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Runner } from 'types/runner';
 import ListUsedTime from 'pages/ListUsedTime';
@@ -15,6 +14,7 @@ import AddRunWaysStorage from 'pages/AddRunWaysStorage';
 import UpdateRunWaysStorage from 'pages/UpdateRunWaysStorage';
 import UpdateRunWay from 'pages/UpdateRunWay';
 import AddRunWay from 'pages/AddRunWay';
+import RunnerDetails from 'pages/RunnerDetails';
 
 const Routes = () => {
   const runner: Runner = {
@@ -54,6 +54,10 @@ const Routes = () => {
           <AddRunner />
         </Route> 
 
+        <Route path="/competidor/:id" >
+          <RunnerDetails />
+        </Route> 
+
         <Route path="/pistas" >
           <ListRunWay />
         </Route>   
@@ -71,11 +75,11 @@ const Routes = () => {
         </Route>                          
         
         <Route path="/opcoes" exact>
-        <RunWaysStorage runWaysStorage={runWaysStorage} />
+        <RunWaysStorage />
         </Route>
 
         <Route path="/opcoes/historicocorrida" exact>
-        <RunWaysStorage runWaysStorage={runWaysStorage} />
+        <RunWaysStorage />
         </Route>
 
         <Route path="/opcoes/historicocorrida/adicionar">
@@ -83,7 +87,7 @@ const Routes = () => {
         </Route>
 
         <Route path="/opcoes/historicocorrida/atualizar/:id">
-        <UpdateRunWaysStorage runWaysStorage={runWaysStorage} />
+        <UpdateRunWaysStorage />
         </Route>
 
         <Route path="/opcoes/listapistas">

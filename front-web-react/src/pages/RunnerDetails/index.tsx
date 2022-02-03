@@ -1,11 +1,21 @@
-import "./styles.css";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import api from "Services/api";
-import { Runner } from "types/runner";
+import './styles.css';
+import { Link, useParams } from 'react-router-dom';
+import { Runner } from 'types/runner';
+import { useEffect, useState } from 'react';
+import api from 'Services/api';
 
-const UpdateRunner = () => {
+const RunnerDetails = () => {
+  const { id } = useParams<{ id: string }>();
+  const [runnerDetails, setRunnerDetails] = useState<Runner>();
 
+  useEffect(() => {
+    findRunnerDetails();
+  }, [id]);
+
+  async function findRunnerDetails() {
+    const response = await api.get<Runner>(`runners/${id}`);
+    setRunnerDetails(response.data);
+  }
 
   return (
     <div>
@@ -13,53 +23,27 @@ const UpdateRunner = () => {
         <h2 className="text-center">Dados Competidor</h2>
 
         <div className="row container-table">
-          <table className="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Sexo</th>
-                <th>Temperatura</th>
-                <th>Peso</th>
-                <th>Altura</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {
-                <tr key="id">
-                  <td>deivid</td>
-                  <td>Masculino</td>
-                  <td>25º</td>
-                  <td>81 Kg</td>
-                  <td>1.70m</td>
-                </tr>
-              }
-            </tbody>
-          </table>
-
-          <div className="btn-container">           
-            <button
+          
+          <div className="card">
+            <h5 className="card-header">{runnerDetails?.name}</h5>
+            <div className="card-body">
+              <p className="card-title">Id = {runnerDetails?.id}</p>
               
-              className="btn btn-secondary"
-              type="button"
-            >
-              Salvar
-            </button>
+              <h6 className="card-text">
+                Sexo : {runnerDetails?.sexo}<br/> Peso: {runnerDetails?.weight}KG<br/> Altura:{runnerDetails?.height} M
+              </h6>
+              <br/>
 
-            <span className="btn-update">
-            <Link
-              to="/competidores"
-              className="btn btn-secondary "
-              type="button"
-            >
-              Voltar
-            </Link>
-            </span>
+              <a href="/competidores" className="btn btn-secondary">
+                Voltar
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   );
 };
 
-export default UpdateRunner;
+export default RunnerDetails;

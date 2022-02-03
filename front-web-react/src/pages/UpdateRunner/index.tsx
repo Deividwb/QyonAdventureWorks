@@ -1,7 +1,26 @@
 import "./styles.css";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import api from "Services/api";
+import { Runner } from "types/runner";
 
 const UpdateRunner = () => {
+
+
+  useEffect(() => {
+    loadUpdateRunners();
+  }, []);
+
+  async function loadUpdateRunners() {
+
+    //const [updateRunner, setUpdateRunner] = useState <Runner[]>([]);
+
+    const response = await api.get('/runners');
+    console.log(response.data);
+    //setUpdateRunner(response.data)
+  }
+
+
   return (
     <div>
       <div>

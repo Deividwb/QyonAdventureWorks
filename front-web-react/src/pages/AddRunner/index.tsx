@@ -1,7 +1,8 @@
 import './styles.css';
-import { Link } from 'react-router-dom';
-import { ChangeEvent, useState } from 'react';
+import { Link, useHistory, useParams } from 'react-router-dom';
+import { ChangeEvent, useEffect, useState } from 'react';
 import api from 'Services/api';
+import ListRunners from 'pages/ListRunners';
 
 interface IRunner {
   name: string;
@@ -12,6 +13,10 @@ interface IRunner {
 }
 
 const AddRunner = () => {
+
+  const history = useHistory;
+  const { id } = useParams<{ id: string }>();
+
   const [model, setModel] = useState<IRunner>({
     name: '',
     sexo: '',
@@ -19,6 +24,11 @@ const AddRunner = () => {
     weight: 0,
     height: 0,
   });
+
+  useEffect(() => {
+    if (id !== undefined){
+    findRunner(id)}  
+  },[id])
 
   function updateModel(e: ChangeEvent<HTMLInputElement>) {
     setModel({
@@ -30,9 +40,32 @@ const AddRunner = () => {
   async function onSubmit (e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
 
-    const response = await api.post('/runners', model)
+    if (id !== undefined){
 
-    console.log(response)
+      const response = await api.put(`runners/${id}`, model)
+    }else {
+
+    const response = await api.post('/runners', model)
+    //console.log(response)
+  }
+  back()
+}
+
+ function back() {
+    return(
+      <ListRunners />
+    )
+}
+
+  async function findRunner (id: string) {
+    const response = await api.get(`runners/${id}`)    
+    setModel({
+      name: response.data.name,
+      sexo: response.data.sexo,
+      bodyTemperature: response.data.bodyTemperature,
+      weight: response.data.weight,
+      height: response.data.height         
+    })
   }
 
   return (
@@ -40,15 +73,16 @@ const AddRunner = () => {
       <div className="container">
         <div className="row">
           <div className="card col-md-6 offset-md-3 offset-md-3">
-            <h3 className="text-center">Adicionar Competidor</h3>
+            <h3 className="text-center">Adicionar Competidor/Atualizar</h3>
 
             <div className="card-body">
-              <form onSubmit={onSubmit}>
+              <form onSubmit={onSubmit} >
                 <div className="btn-reset">
                   <input
                     className="btn-secondary"
                     type="reset"
                     value="Limpar Campos"
+                                    
                   />
                 </div>
 
@@ -59,6 +93,7 @@ const AddRunner = () => {
                     placeholder="Nome"
                     name="name"
                     className="form-control"
+                    value={model.name}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       updateModel(e)
                     }
@@ -72,6 +107,7 @@ const AddRunner = () => {
                     placeholder="Digite o Sexo"
                     name="sexo"
                     className="form-control"
+                    value={model.sexo}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       updateModel(e)
                     }
@@ -88,6 +124,7 @@ const AddRunner = () => {
                     placeholder="Digite a Temperatura"
                     name="bodyTemperature"
                     className="form-control"
+                    value={model.bodyTemperature}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       updateModel(e)
                     }
@@ -101,19 +138,21 @@ const AddRunner = () => {
                     placeholder="Digite o Peso"
                     name="weight"
                     className="form-control"
+                    value={model.weight}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       updateModel(e)
                     }
                   />
                 </div>
 
-                <div className="input-weight">
+                <div className="input-height">
                   <label htmlFor="ctrl-height">Altura:</label>
                   <input
                     id="ctrl-height"
                     placeholder="Digite a Altura"
                     name="height"
                     className="form-control"
+                    value={model.height}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       updateModel(e)
                     }

@@ -10,6 +10,8 @@ import { Runner } from 'types/runner';
 
 const ListRunners = () => {
 
+  
+
   const [runner, setRunner] = useState<Runner[]>([]);
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const ListRunners = () => {
     setRunner(response.data)
   }
 
-  
+
   
 
   return (
@@ -68,7 +70,7 @@ const ListRunners = () => {
                     <div className="container-btns">
                       <Link
                         className="upbutton"
-                        to={`/competidor/atualizar/${runners.id}`}
+                        to={`/competidor/adicionar/${runners.id}`}
                       >
                         {' '}
                         <UpdateImg />{' '}

@@ -4,7 +4,7 @@ import Home from 'pages/Home';
 import ListRunners from 'pages/ListRunners';
 import ListRunWay from 'pages/ListRunWay';
 import RunWayDetails from 'pages/RunWayDetails';
-import UpdateRunner from 'pages/UpdateRunner';
+//import UpdateRunner from 'pages/UpdateRunner';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Runner } from 'types/runner';
 import ListUsedTime from 'pages/ListUsedTime';
@@ -50,8 +50,8 @@ const Routes = () => {
           <AddRunner />
         </Route>
 
-         <Route path="/competidor/atualizar/:id" >
-          <UpdateRunner />
+         <Route path="/competidor/adicionar/:id" >
+          <AddRunner />
         </Route> 
 
         <Route path="/pistas" >

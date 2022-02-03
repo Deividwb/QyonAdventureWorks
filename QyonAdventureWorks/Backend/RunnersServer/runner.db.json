@@ -49,16 +49,16 @@
       "id": 6
     },
     {
-      "name": "teste",
-      "sexo": "m",
-      "bodyTemperature": "40",
-      "weight": "50",
-      "height": "50",
+      "name": "Teste Atualizado",
+      "sexo": "f",
+      "bodyTemperature": "50",
+      "weight": "10",
+      "height": "1.53",
       "id": 7
     },
     {
       "name": "Bruna",
-      "sexo": "f",
+      "sexo": "m",
       "bodyTemperature": "29",
       "weight": "75",
       "height": "1.76",

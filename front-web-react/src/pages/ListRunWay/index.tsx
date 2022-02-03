@@ -3,27 +3,22 @@ import './styles.css';
 import CardRunWay from 'components/CardRunWay';
 import { ReactComponent as RunImg } from 'assets/images/run.svg';
 import { Link } from 'react-router-dom';
-/*import { useEffect, useState } from 'react';
-import { SpringPage } from 'types/vendor/spring';
 import { RunWay } from 'types/runway';
-import { AxiosParams } from 'types/vendor/axios';
-import { BASE_URL } from 'util/request';
-import axios from 'axios';*/
+import { useEffect, useState } from 'react';
+import api from 'Services/api';
 
 const ListRunWay = () => {
-  //const [page, setPage] = useState<SpringPage<RunWay>>();
+  const [runway, setRunway] = useState<RunWay[]>([]);
 
- /*useEffect(() => {
-    const params: AxiosParams = {
-      method: 'GET',
-      url: `${BASE_URL}/runways`,
-    };
+  useEffect(() => {
+    loadRunways();
+  }, []);
 
-    axios(params).then((response) => {
-      setPage(response.data);
-      console.log(response.data);
-    });
-  }, []);*/
+  async function loadRunways() {
+    const response = await api.get('/runways');
+    console.log(response.data);
+    setRunway(response.data);
+  }
 
   return (
     <div>
@@ -37,14 +32,13 @@ const ListRunWay = () => {
         </label>
       </div>
 
-      <div className="container my-4">
+      <div className="container my-4" >
         <div className="row">
-        
-
           <div className="col-sm-6 col-lg-4 col-xl-3">
-            <CardRunWay />
+            {runway.map((runways) => (
+              <CardRunWay key={runways.id}/>
+            ))}
           </div>
-
         </div>
       </div>
     </div>
@@ -52,10 +46,3 @@ const ListRunWay = () => {
 };
 
 export default ListRunWay;
-/*
-  {page?.content.map((runway) => (
-            <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay />
-            </div>
-          ))}
-*/

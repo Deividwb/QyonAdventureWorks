@@ -1,23 +1,39 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
-//import { Runner } from 'types/runner';
-//import axios from 'axios';
-//import { BASE_URL } from 'util/request';
+import { ChangeEvent, useState } from 'react';
+import api from 'Services/api';
 
-
+interface IRunner {
+  name: string;
+  sexo: string;
+  bodyTemperature: number;
+  weight: number;
+  height: number;
+}
 
 const AddRunner = () => {
+  const [model, setModel] = useState<IRunner>({
+    name: '',
+    sexo: '',
+    bodyTemperature: 0,
+    weight: 0,
+    height: 0,
+  });
 
-  //FORMA INCORRETA
-  //let runner: Runner;
+  function updateModel(e: ChangeEvent<HTMLInputElement>) {
+    setModel({
+      ...model,
+      [e.target.name]: e.target.value,
+    });
+  }
 
-  //FORMA INCORRETA
-  //axios.get(BASE_URL + "/runners/2")
-  //.then(response => {
-    //console.log(response.data)
- // });
+  async function onSubmit (e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
 
+    const response = await api.post('/runners', model)
 
+    console.log(response)
+  }
 
   return (
     <div>
@@ -27,7 +43,7 @@ const AddRunner = () => {
             <h3 className="text-center">Adicionar Competidor</h3>
 
             <div className="card-body">
-              <form action="/competidores">
+              <form onSubmit={onSubmit}>
                 <div className="btn-reset">
                   <input
                     className="btn-secondary"
@@ -37,23 +53,31 @@ const AddRunner = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="ctrl-name">Nome</label>
+                  <label htmlFor="ctrl-name">Nome:</label>
                   <input
                     id="ctrl-name"
                     placeholder="Nome"
                     name="name"
                     className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
                   />
                 </div>
 
                 <div>
                   <label htmlFor="ctrl-sexo">Sexo:</label>
-                  <select className="form-control" name="sexo" id="ctrl-sexo">
-                    <option selected>Escolha...</option>
-                    <option value="1">Masculino</option>
-                    <option value="2">Feminino</option>
-                  </select>
+                  <input
+                    id="ctrl-sexo"
+                    placeholder="Digite o Sexo"
+                    name="sexo"
+                    className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
+                  />
                 </div>
+                
 
                 <div>
                   <label htmlFor="ctrl-bodytemperature">
@@ -62,48 +86,76 @@ const AddRunner = () => {
                   <input
                     id="ctrl-bodytemperature"
                     placeholder="Digite a Temperatura"
-                    name="temperature"
+                    name="bodyTemperature"
                     className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="ctrl-weight">Peso</label>
+                  <label htmlFor="ctrl-weight">Peso:</label>
                   <input
                     id="ctrl-weight"
                     placeholder="Digite o Peso"
                     name="weight"
                     className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
                   />
                 </div>
 
                 <div className="input-weight">
-                  <label htmlFor="ctrl-height">Altura</label>
+                  <label htmlFor="ctrl-height">Altura:</label>
                   <input
                     id="ctrl-height"
                     placeholder="Digite a Altura"
                     name="height"
                     className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
                   />
                 </div>
 
-                <Link className="btn btn-secondary" to="/competidores">
+                <button type='submit' className="btn btn-secondary" >
                   Salvar
-                </Link>
+                </button>
 
                 <Link
                   className="btn btn-secondary btn-cancel"
                   to="/competidores"
                 >
                   Cancelar
-                </Link>             
+                </Link>
               </form>
             </div>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
   );
 };
 
 export default AddRunner;
+
+
+/* 
+<div>
+                  <label htmlFor="ctrl-sexo">Sexo:</label>
+                  <select
+                    className="form-control"
+                    name="sexo"
+                    id="ctrl-sexo"
+                    
+                  >
+                    <option selected>Escolha...</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Feminino</option>
+                   
+                  </select>
+                </div>
+
+*/

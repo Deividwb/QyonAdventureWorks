@@ -9,6 +9,7 @@ import { Runner } from 'types/runner';
 
 
 const ListRunners = () => {
+
   const [runner, setRunner] = useState<Runner[]>([]);
 
   useEffect(() => {
@@ -16,10 +17,14 @@ const ListRunners = () => {
   }, []);
 
   async function loadRunners() {
+
     const response = await api.get('/runners');
     console.log(response.data);
     setRunner(response.data)
   }
+
+  
+  
 
   return (
     <div>

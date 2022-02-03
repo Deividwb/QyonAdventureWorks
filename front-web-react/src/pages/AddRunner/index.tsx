@@ -1,5 +1,6 @@
 import './styles.css';
-import { Link, useHistory, useParams } from 'react-router-dom';
+
+import { Link, useParams } from 'react-router-dom';
 import { ChangeEvent, useEffect, useState } from 'react';
 import api from 'Services/api';
 

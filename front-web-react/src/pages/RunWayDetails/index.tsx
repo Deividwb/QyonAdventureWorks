@@ -1,54 +1,54 @@
-import { Link } from 'react-router-dom';
 import './styles.css';
-import { ReactComponent as RunImg} from 'assets/images/run.svg';
-import CardRunWay from 'components/CardRunWay';
 
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import api from 'Services/api';
+import { RunWay } from 'types/runway';
 
 const RunWayDetails = () => {
 
-    
+  const { id } = useParams<{ id: string }>();
+  const [runWayDetails, setRunWayDetails] = useState<RunWay>();
 
-    return(
-        <div>     
-        <h2 className="text-center">Pistas Utilizadas</h2>
-        <div className="btn-img">
-          <Link className="btn-img-link" to="/pistas">
-            <RunImg />
-          </Link> 
-          <label>
-            <p>Voltar</p>
-          </label>         
-        </div>
-  
-        <div className="container my-4">
-          <div className="row">
-            <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay  />
+  useEffect(() => {
+    findRunWayDetails();
+  }, [id]);
+
+  async function findRunWayDetails() {
+    const response = await api.get<RunWay>(`runways/${id}`);
+    setRunWayDetails(response.data);
+  }
+  //RunWayDetails  <CardRunWay  />
+
+  return (
+    <div className='main-container'>
+      <div >
+        <h2 className="text-center">Dados da Pista</h2>
+
+        <div className="row container-table text-center">
+
+          <div className="card" style={{ width: '30rem' }}>
+            <h6>id= {runWayDetails?.id}</h6><br />
+            <img
+              className="card-img-top"
+              src={runWayDetails?.image}
+              alt="Imagem"
+            />
+            <div className="card-body">
+              <h5 className='text-center'>Descrição</h5>
+              <p className="card-text">
+                {runWayDetails?.description}
+              </p>
             </div>
-  
-            <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay  />
-            </div>
-  
-            <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay  />
-            </div>
-  
-            <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay  />
-            </div>
-  
-            <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay  />
-            </div>
-  
-            <div className="col-sm-6 col-lg-4 col-xl-3">
-              <CardRunWay  />
-            </div>
+            <a href="/pistas" className="btn btn-secondary">
+                Voltar
+              </a>
           </div>
         </div>
+
       </div>
-    ); 
-}
+    </div>
+  );
+};
 
 export default RunWayDetails;

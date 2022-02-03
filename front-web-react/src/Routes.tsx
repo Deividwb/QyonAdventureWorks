@@ -12,7 +12,7 @@ import { RunWayStorage } from 'types/runway-storage';
 import RunWaysStorage from 'pages/RunWaysStorage';
 import AddRunWaysStorage from 'pages/AddRunWaysStorage';
 import UpdateRunWaysStorage from 'pages/UpdateRunWaysStorage';
-import UpdateRunWay from 'pages/UpdateRunWay';
+//import UpdateRunWay from 'pages/UpdateRunWay';
 import AddRunWay from 'pages/AddRunWay';
 import RunnerDetails from 'pages/RunnerDetails';
 
@@ -60,18 +60,19 @@ const Routes = () => {
 
         <Route path="/pistas" >
           <ListRunWay />
-        </Route>   
-
-        <Route path="/pista/:runwayId" exact>
-          <RunWayDetails />
-        </Route>    
+        </Route>  
 
         <Route path="/pista/adicionar" >
           <AddRunWay />
+        </Route>   
+
+        <Route path="/pista/:id" exact>
+          <RunWayDetails />
         </Route>  
 
-        <Route path="/pista/atualizar/:id">
-          <UpdateRunWay />
+        
+        <Route path="/pista/adicionar/:id">
+          <AddRunWay />
         </Route>                          
         
         <Route path="/opcoes" exact>

@@ -1,4 +1,5 @@
 import './styles.css';
+
 import { Link, useParams } from 'react-router-dom';
 import { Runner } from 'types/runner';
 import { useEffect, useState } from 'react';
@@ -16,6 +17,7 @@ const RunnerDetails = () => {
     const response = await api.get<Runner>(`runners/${id}`);
     setRunnerDetails(response.data);
   }
+  //RunWayDetails  <CardRunWay  />
 
   return (
     <div>

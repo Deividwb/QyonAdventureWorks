@@ -21,6 +21,7 @@ const ListRunWay = () => {
     setListRunway(response.data);
   }
 
+
   return (
     <div>
       <h2 className="text-center">Lista Pistas de Corrida</h2>
@@ -35,11 +36,13 @@ const ListRunWay = () => {
 
       <div className="container my-4" >
         <div className="row">
-          <div className="col-sm-6 col-lg-4 col-xl-3">
+          
             {listRunway.map((listRunways) => (
+              <div className="col-sm-6 col-lg-4 col-xl-3">
               <CardRunWay key={listRunways.id}/>
+              </div>
             ))}
-          </div>
+          
         </div>
       </div>
     </div>

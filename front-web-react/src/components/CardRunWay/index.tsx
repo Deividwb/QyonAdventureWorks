@@ -8,35 +8,42 @@ import { useEffect, useState } from 'react';
 import api from 'Services/api';
 
 const CardRunWay = () => {
-  const [carRunway, setCarRunway] = useState<RunWay[]>([]);
+  const [cardRunway, setCardRunways] = useState<RunWay[]>([]);
 
   useEffect(() => {
-    loadRunWay();
-  }, []);
+    loadCarRunWays();
+  }, [cardRunway]);
 
-  async function loadRunWay() {
+  async function loadCarRunWays() {
     const response = await api.get('/runways');
     //console.log(response.data);
-    setCarRunway(response.data);
+    setCardRunways(response.data);
+  }
+
+  
+  async function deleteRunWay(id: number) {
+    
+    const response = await api.delete(`runways/${id}`);
+    loadCarRunWays()
   }
 
   return (
     <div>
-      {carRunway.map((carRunways) => (
-        <div className="base-card hiking-card" key={carRunways.id}>
+      {cardRunway.map((cardRunways) => (
+        <div className="base-card hiking-card" key={cardRunways.id}>
           <div className="card-top-container" >
-            <img src={carRunways?.image} alt="imagem" />
+            <img src={cardRunways?.image} alt="imagem" />
             <div className="card-description">
               <h6>DESCRIÇÃO</h6>
-              <p>{carRunways?.description}</p>
+              <p>{cardRunways?.description}</p>
             </div>
             <div className="card-button">
-              <Link to={`/pista/${carRunways?.id}`}>          
+              <Link to={`/pista/${cardRunways?.id}`}>          
               
                 <ViewImg />
               </Link>
 
-              <Link to={`/pista/atualizar/:id${carRunways?.id}`} >
+              <Link to={`/pista/adicionar/${cardRunways?.id}`} >
                             
                 <UpdateImg />
               </Link>
@@ -55,3 +62,5 @@ const CardRunWay = () => {
 };
 
 export default CardRunWay;
+
+

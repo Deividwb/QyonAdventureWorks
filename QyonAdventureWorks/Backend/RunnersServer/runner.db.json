@@ -66,6 +66,16 @@
       "id": 5,
       "image": "assets/images/stcatarina.png",
       "description": "A pista sintética de atletismo do Centro de Desportos da Universidade Federal de Santa Catarina terá uma estrutura, coberta com a borracha natural Mondo, permite provas de corrida; saltos em altura, distância e triplo; arremesso de peso e lançamentos de dardo, martelo e disco"
+    },
+    {
+      "image": "https://jundiai.sp.gov.br/noticias/wp-content/uploads/sites/32/2019/06/obras_bolao-31.jpg",
+      "description": "adicionar",
+      "id": 6
+    },
+    {
+      "image": "https://avaazdo.s3.amazonaws.com/original_5c8fbb1b9f0ce.jpg",
+      "description": "Essa pista foi usada nas maiores competições do pais",
+      "id": 7
     }
   ],
   "runways-storage": [

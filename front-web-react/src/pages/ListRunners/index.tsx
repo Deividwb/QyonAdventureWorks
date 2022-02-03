@@ -1,4 +1,5 @@
 import './styles.css';
+
 import { Link } from 'react-router-dom';
 import { ReactComponent as UpdateImg } from 'assets/images/update.svg';
 import { ReactComponent as TrashImg } from 'assets/images/trash.svg';
@@ -26,13 +27,11 @@ const ListRunners = () => {
     setRunner(response.data)
   }
 
-  async function deleteRunners(id: number) {
+  async function deleteRunner(id: number) {
     
     const response = await api.delete(`runners/${id}`);
     loadRunners()
   }
-
-
   
 
   return (
@@ -87,7 +86,7 @@ const ListRunners = () => {
                         <ViewImg />
                       </Link>
 
-                      <button  onClick={() => deleteRunners(runners.id)} className="btn">                       
+                      <button  onClick={() => deleteRunner(runners.id)} className="btn">                       
                         <TrashImg />
                       </button>
                     </div>

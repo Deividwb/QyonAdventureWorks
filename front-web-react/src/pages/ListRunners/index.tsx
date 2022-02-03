@@ -1,5 +1,5 @@
 import './styles.css';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { ReactComponent as UpdateImg } from 'assets/images/update.svg';
 import { ReactComponent as TrashImg } from 'assets/images/trash.svg';
 import { ReactComponent as RunImg } from 'assets/images/run.svg';
@@ -10,19 +10,32 @@ import { Runner } from 'types/runner';
 
 const ListRunners = () => {
 
+  const { id } = useParams<{ id: string }>();
   
 
   const [runner, setRunner] = useState<Runner[]>([]);
 
-  useEffect(() => {
+  useEffect(() => {   
     loadRunners();
   }, []);
+
+  useEffect(() => { 
+
+  
+
+  },[id])
 
   async function loadRunners() {
 
     const response = await api.get('/runners');
     console.log(response.data);
     setRunner(response.data)
+  }
+
+  async function deleteRunners(id: number) {
+    
+    const response = await api.delete(`runners/${id}`);
+    loadRunners()
   }
 
 
@@ -75,9 +88,9 @@ const ListRunners = () => {
                         {' '}
                         <UpdateImg />{' '}
                       </Link>
-                      <button className="btn">
-                        {' '}
-                        <TrashImg />{' '}
+
+                      <button onClick={() => deleteRunners(runners.id)} className="btn">                       
+                        <TrashImg />
                       </button>
                     </div>
                   </td>

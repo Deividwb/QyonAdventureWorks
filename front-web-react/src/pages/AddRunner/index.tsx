@@ -2,7 +2,6 @@ import './styles.css';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { ChangeEvent, useEffect, useState } from 'react';
 import api from 'Services/api';
-import ListRunners from 'pages/ListRunners';
 
 interface IRunner {
   name: string;
@@ -14,7 +13,7 @@ interface IRunner {
 
 const AddRunner = () => {
 
-  const history = useHistory;
+  //const history = useHistory;
   const { id } = useParams<{ id: string }>();
 
   const [model, setModel] = useState<IRunner>({
@@ -53,9 +52,11 @@ const AddRunner = () => {
 
  function back() {
     return(
-      <ListRunners />
+      <Link to="/competidores" />
     )
 }
+
+
 
   async function findRunner (id: string) {
     const response = await api.get(`runners/${id}`)    

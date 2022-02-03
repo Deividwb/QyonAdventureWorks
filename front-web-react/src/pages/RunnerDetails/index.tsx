@@ -7,24 +7,10 @@ import { Runner } from "types/runner";
 const UpdateRunner = () => {
 
 
-  useEffect(() => {
-    loadUpdateRunners();
-  }, []);
-
-  async function loadUpdateRunners() {
-
-    //const [updateRunner, setUpdateRunner] = useState <Runner[]>([]);
-
-    const response = await api.get('/runners');
-    console.log(response.data);
-    //setUpdateRunner(response.data)
-  }
-
-
   return (
     <div>
       <div>
-        <h2 className="text-center">Atualizar Competidor</h2>
+        <h2 className="text-center">Dados Competidor</h2>
 
         <div className="row container-table">
           <table className="table table-striped table-bordered">

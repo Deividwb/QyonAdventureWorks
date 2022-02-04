@@ -19,6 +19,7 @@ const ListRunners = () => {
     loadRunners();
   }, []);
 
+  //apagar
   const teste = ()=>{
     runner.map(runers=>(
       runers.name    

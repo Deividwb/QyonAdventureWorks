@@ -1,8 +1,44 @@
-import { Link } from 'react-router-dom';
 import './styles.css';
+
+import { Link } from 'react-router-dom';
 import { ReactComponent as RunImg } from 'assets/images/run.svg';
+import { useEffect, useState } from 'react';
+import api from 'Services/api';
+import { Runner } from 'types/runner';
+import { RunWayStorage } from 'types/runway-storage';
+
+
 
 const ListUsedTime = () => {
+
+  const [runner, setRunner] = useState<Runner[]>([]); 
+  const [time, setTime] = useState<RunWayStorage[]>([]); 
+
+//fazer relacionamento das duas tabelas
+ 
+
+  useEffect(() => {   
+    loadRunnerName();
+    loadTime();
+  }, []);
+
+
+  async function loadRunnerName() {
+    const response = await api.get('/runners');
+    //console.log(response.data);    
+    setRunner(response.data)   
+  }
+
+  async function loadTime() {
+    const response = await api.get('/runways-storage');
+  
+    //console.log(response.data);    
+    setTime(response.data)   
+  }
+ 
+
+
+
   return (
     <div>
       <div>
@@ -28,12 +64,16 @@ const ListUsedTime = () => {
             </thead>
 
             <tbody>
+
               {
-                <tr key={'runner.id'}>
-                  <td>{"Deivid"}</td>
-                  <td>{'10'} horas</td>
+                //ajustar o nome e fzr calculo ddas horas
+                time.map(times => (
+                  <tr key={times.id}>
+                  <td>{times?.id}</td>
+                  <td>{times.usedTime} horas</td>                  
                 </tr>
-              }
+                ))}           
+              
             </tbody>
           </table>
         </div>

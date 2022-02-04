@@ -15,6 +15,7 @@ import UpdateRunWaysStorage from 'pages/UpdateRunWaysStorage';
 //import UpdateRunWay from 'pages/UpdateRunWay';
 import AddRunWay from 'pages/AddRunWay';
 import RunnerDetails from 'pages/RunnerDetails';
+import RunWayById from 'pages/RunWayById';
 
 const Routes = () => {
   const runner: Runner = {
@@ -67,7 +68,7 @@ const Routes = () => {
         </Route>   
 
         <Route path="/pista/:id" exact>
-          <RunWayDetails />
+          <RunWayById />
         </Route>  
 
         
@@ -91,7 +92,7 @@ const Routes = () => {
         <UpdateRunWaysStorage />
         </Route>
 
-        <Route path="/opcoes/listapistas">
+        <Route path="/opcoes/listapistas" >
         <RunWayDetails />
         </Route>
 

@@ -50,8 +50,8 @@ const ListRunWay = () => {
             <div className="col-sm-6 col-lg-4 col-xl-3">
            
               <div>
-                <div className="base-card hiking-card">
-                  <div className="card-top-container">
+                <div className="card base-card hiking-card">
+                  <div className=" card-top-container">
                     <img className='img-center' src={listRunways?.image} alt="imagem" />
                     <div className="card-description">
                       <h6>DESCRIÇÃO</h6>

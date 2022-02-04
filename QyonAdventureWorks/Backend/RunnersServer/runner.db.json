@@ -76,6 +76,16 @@
       "image": "https://avaazdo.s3.amazonaws.com/original_5c8fbb1b9f0ce.jpg",
       "description": "Essa pista foi usada nas maiores competições do pais",
       "id": 7
+    },
+    {
+      "image": "",
+      "description": "nova pista agora",
+      "id": 8
+    },
+    {
+      "image": "",
+      "description": "atuallizado dwb",
+      "id": 9
     }
   ],
   "runways-storage": [
@@ -113,6 +123,30 @@
       "runway": 1,
       "dateRunWay": "21/11/2020",
       "usedTime": 30
+    },
+    {
+      "name": "thiago",
+      "sexo": "m",
+      "bodyTemperature": "26",
+      "weight": "55",
+      "height": "1.76",
+      "id": 6
+    },
+    {
+      "name": "deivid",
+      "sexo": "m",
+      "bodyTemperature": 0,
+      "weight": 0,
+      "height": 0,
+      "id": 7
+    },
+    {
+      "name": "thiago",
+      "sexo": "v",
+      "bodyTemperature": "0v",
+      "weight": "0v",
+      "height": "0v",
+      "id": 8
     }
   ]
 }

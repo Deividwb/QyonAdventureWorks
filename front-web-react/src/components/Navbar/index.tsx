@@ -28,7 +28,7 @@ const Navbar = () => {
             </li>
 
             <li className="nav-three">
-            <NavLink to="">{<Options/>}</NavLink> 
+            <NavLink to="/opcoes/historicocorrida">{<Options/>}</NavLink> 
             </li>                      
           </ul>
         </section>

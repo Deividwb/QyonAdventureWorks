@@ -22,7 +22,7 @@ const AddRunner = () => {
     sexo: '',
     bodyTemperature: 0,
     weight: 0,
-    height: 0,
+    height: 0
   });
 
   useEffect(() => {
@@ -42,10 +42,10 @@ const AddRunner = () => {
 
     if (id !== undefined){
 
-      const response = await api.put(`runners/${id}`, model)
+      const response = await api.put(`runways-storage/${id}`, model)
     }else {
 
-    const response = await api.post('/runners', model)
+    const response = await api.post('/runways-storage', model)
     //console.log(response)
   }
   back()
@@ -60,7 +60,7 @@ const AddRunner = () => {
 
 
   async function findRunner (id: string) {
-    const response = await api.get(`runners/${id}`)    
+    const response = await api.get(`runways-storage/${id}`)    
     setModel({
       name: response.data.name,
       sexo: response.data.sexo,
@@ -77,6 +77,7 @@ const AddRunner = () => {
           <div className="card col-md-6 offset-md-3 offset-md-3">
             <h3 className="text-center">Adicionar Competidor/Atualizar</h3>
 
+            
             <div className="card-body">
               <form onSubmit={onSubmit} >
                 <div className="btn-reset">
@@ -173,6 +174,9 @@ const AddRunner = () => {
                 </Link>
               </form>
             </div>
+
+
+            
           </div>
         </div>
       </div>

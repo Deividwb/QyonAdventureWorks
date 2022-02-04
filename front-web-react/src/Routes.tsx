@@ -62,7 +62,7 @@ const Routes = () => {
           <ListRunWay />
         </Route>  
 
-        <Route path="/pista/adicionar" >
+        <Route path="/pista/adicionar" exact>
           <AddRunWay />
         </Route>   
 

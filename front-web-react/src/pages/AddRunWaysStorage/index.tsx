@@ -34,7 +34,7 @@ const AddRunWaysStorage = () => {
     setModel(response.data);
   }
 
-  ////////
+  
   useEffect(() => {
     if (id !== undefined) {
       findAddRunWayStorage(id);
@@ -55,6 +55,7 @@ const AddRunWaysStorage = () => {
       const response = await api.put(`runways-storage/${id}`, model);
     } else {
       const response = await api.post('/runways-storage', model);
+      console.log(response)
     }
   }
 
@@ -74,18 +75,11 @@ const AddRunWaysStorage = () => {
       <div className="container">
         <div className="row">
           <div className="card col-md-6 offset-md-3 offset-md-3">
-            <h3 className="text-center">Adicionar Histórico de Corrida</h3>
+            <h3 className="text-center">Adicionar Histórico de Corridas</h3>
 
             <div className="card-body">
               <form onSubmit={onSubmit}>
-                <div className="btn-reset">
-                  <input
-                    className="btn-secondary"
-                    type="reset"
-                    value="Limpar Campos"
-                  />
-                </div>
-
+                
                 <div>
                   <label htmlFor="ctrl-runner">Competidor:</label>
                   <input
@@ -93,6 +87,10 @@ const AddRunWaysStorage = () => {
                     placeholder="Adicione Competidor"
                     name="runner"
                     className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
+
                   />
                 </div>
 
@@ -103,6 +101,9 @@ const AddRunWaysStorage = () => {
                     placeholder="Digite a Pista Utilizada"
                     name="runwaydetail"
                     className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
                   />
                 </div>
 
@@ -114,6 +115,9 @@ const AddRunWaysStorage = () => {
                     name="datetime"
                     placeholder="Digite a Data Corrida"
                     className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
                   />
                 </div>
 
@@ -123,8 +127,10 @@ const AddRunWaysStorage = () => {
                     id="ctrl-usedtime"
                     placeholder="Digite o tempo da corrida"
                     name="usedtime"
-
                     className="form-control"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateModel(e)
+                    }
                   />
                 </div>
                 

@@ -14,7 +14,7 @@ interface IRunner {
 
 const AddRunner = () => {
 
-  //const history = useHistory;
+ 
   const { id } = useParams<{ id: string }>();
 
   const [model, setModel] = useState<IRunner>({
@@ -42,25 +42,18 @@ const AddRunner = () => {
 
     if (id !== undefined){
 
-      const response = await api.put(`runways-storage/${id}`, model)
+      const response = await api.put(`runners/${id}`, model)
     }else {
 
-    const response = await api.post('/runways-storage', model)
-    //console.log(response)
+    const response = await api.post('/runners', model)
+    console.log(response)
   }
-  back()
+ 
 }
-
- function back() {
-    return(
-      <Link to="/competidores" />
-    )
-}
-
 
 
   async function findRunner (id: string) {
-    const response = await api.get(`runways-storage/${id}`)    
+    const response = await api.get(`runners/${id}`)    
     setModel({
       name: response.data.name,
       sexo: response.data.sexo,
@@ -80,15 +73,7 @@ const AddRunner = () => {
             
             <div className="card-body">
               <form onSubmit={onSubmit} >
-                <div className="btn-reset">
-                  <input
-                    className="btn-secondary"
-                    type="reset"
-                    value="Limpar Campos"
-                                    
-                  />
-                </div>
-
+                
                 <div>
                   <label htmlFor="ctrl-name">Nome:</label>
                   <input

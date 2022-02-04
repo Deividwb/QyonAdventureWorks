@@ -93,13 +93,7 @@ const UpdateRunWaysStorage = () => {
 
             <div className="card-body">
               <form onSubmit={onSubmit}>
-                <div className="btn-reset">
-                  <input
-                    className="btn-secondary"
-                    type="reset"
-                    value="Limpar Campos"
-                  />
-                </div>
+               
 
                 <div>
                   <label htmlFor="ctrl-runner">Id Competidor:</label>

@@ -1,3 +1,11 @@
+.main-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 .btn-img{ 
     padding-left: 20px;
     display: flex;
@@ -12,4 +20,43 @@
 .btn-img p{
     color: #fff;
 }
+
+
+.hiking-card {
+    margin-bottom: 30px;
+    padding: 1px 10px; 
+  }
+  .card-top-container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 2px;
+  }
+  
+  .card-top-container img {
+    width: 200px;
+    height: 100px;
+    padding-left: 10px;
+    border-bottom: 2px solid #e1e1e1;
+  }
+  
+  .card-description {
+    text-align: center;
+  }
+  
+  .card-button {  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .trash-btn{
+  padding-top: 25px;
+  }
+  
+  
+  .update-btn{
+      padding-top: 25px;
+      padding-left: 45px;
+  }
 

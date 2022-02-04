@@ -16,11 +16,12 @@ const AddRunWay = () => {
 
   const [model, setModel] = useState<IRunWay>({
     image: '',
-    description: '',
+    description: ''
   });
 
   useEffect(() => {
     if (id !== undefined){
+      console.log(id)
       findRunWays(id)}   
   },[id])
 
@@ -44,19 +45,22 @@ const AddRunWay = () => {
     if (id !== undefined){
 
       const response = await api.put(`runways/${id}`, model)
+      console.log(response)
     }else {
-
-    const response = await api.post('/runways', model)
-    console.log(response)
+      
+      const response = await api.post('/runways', model)
+   
   }
 }
 
 
 async function findRunWays (id: string) {
-  const response = await api.get(`runways/${id}`)    
+  const response = await api.get(`runways/${id}`) 
+  
   setModel({
     image: response.data.image,
     description: response.data.description   
+     
            
   })
   
@@ -70,32 +74,25 @@ async function findRunWays (id: string) {
             <h3 className="text-center">Adicionar Pista / Atualizar</h3>
 
             <div className="card-body">
-              <form onSubmit={onSubmit}>
-                <div className="btn-reset">
-                  <input
-                    className="btn-secondary"
-                    type="reset"
-                    value="Limpar Campos"
-                  />
-                </div>
+              <form onSubmit={onSubmit}>               
 
                 <div>
                   <label htmlFor="ctrl-description">Descrição</label>
                   <textarea
-                    className="form-control"
+                    className="form-control"                    
                     name="description"
                     id="ctrl-description"
                     placeholder="Digite seu texto aqui..."
                     onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                       updateModelTextArea(e)
-                    }
-                  ></textarea>
+                    }                    
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="ctrl-image">Adicione Imagem da Pista</label>
                   <input
-                    id="ctrl-image"
+                    id="ctrl-image"                    
                     placeholder="Digite ou Cole a Url da sua imagem"
                     name="image"
                     className="form-control"

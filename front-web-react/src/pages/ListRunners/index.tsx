@@ -13,18 +13,26 @@ import { Runner } from 'types/runner';
 const ListRunners = () => { 
   
 
-  const [runner, setRunner] = useState<Runner[]>([]);
+  const [runner, setRunner] = useState<Runner[]>([]);  
 
   useEffect(() => {   
     loadRunners();
   }, []);
+
+  const teste = ()=>{
+    runner.map(runers=>(
+      runers.name    
+    ) )  
+  }
 
  
   async function loadRunners() {
 
     const response = await api.get('/runners');
     //console.log(response.data);
+    
     setRunner(response.data)
+   
   }
 
   async function deleteRunner(id: number) {

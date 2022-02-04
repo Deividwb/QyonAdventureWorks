@@ -16,7 +16,6 @@ interface IRunWayStorage {
 
 const RunWaysStorage = () => {
 
-  const { id } = useParams<{ id: string }>();
   const [runWayStorage, setRunWayStorage] = useState<RunWayStorage[]>([]);
 
 
@@ -39,51 +38,7 @@ const RunWaysStorage = () => {
     dateRunWay:'',
     usedTime:0
   });
-/////apagar
 
-  useEffect(() => {
-    if (id !== undefined){
-      findRunWayStorage(id)}  
-  },[id])
-
-  function updateModel(e: ChangeEvent<HTMLInputElement>) {
-    setModel({
-      ...model,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  async function onSubmit (e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
-
-    if (id !== undefined){
-
-      const response = await api.put(`runways-storage/${id}`, model)
-    }else {
-
-    const response = await api.post('/runways-storage', model)
-
-  }
- 
-}
-
-
-
-
-
-  async function findRunWayStorage (id: string) {
-    const response = await api.get(`runways-storage/${id}`)    
-    setModel({      
-      runner: response.data.runner,
-      runway: response.data.runways,
-      dateRunWay: response.data.dateRunWay,
-      usedTime: response.data.usedTime         
-    })
-  }
-
-
-
-//////apagar
 
   return (
     <div>
